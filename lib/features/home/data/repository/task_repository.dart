@@ -17,7 +17,7 @@ class TaskRepository {
   Future<void> _initializeMockTasks() async {
     // Generate mock tasks with guaranteed-unique ids and slightly staggered createdAt
     final baseMicros = DateTime.now().microsecondsSinceEpoch;
-    final titles = [
+    final titleTemplates = [
       'Process Invoice',
       'Send Email Notification',
       'Update Database',
@@ -28,8 +28,38 @@ class TaskRepository {
       'Validate User Input',
       'Send Webhook',
       'Archive Old Records',
+      'Optimize Performance',
+      'Fix Bug Report',
+      'Deploy to Production',
+      'Review Pull Requests',
+      'Update Documentation',
+      'Schedule Maintenance',
+      'Monitor Server Health',
+      'Analyze User Behavior',
+      'Create API Endpoint',
+      'Test Payment Gateway',
+      'Migrate Legacy Code',
+      'Audit Security Logs',
+      'Compress Media Files',
+      'Update Dependencies',
+      'Generate Invoice PDF',
+      'Send Reminder Email',
+      'Backup User Data',
+      'Optimize Database Queries',
+      'Run Unit Tests',
+      'Deploy Hotfix',
+      'Monitor API Usage',
+      'Schedule Backup Job',
+      'Update Cache Strategy',
+      'Process Refund Request',
+      'Validate Email Address',
+      'Generate Report PDF',
+      'Cleanup Temp Files',
+      'Update SSL Certificate',
+      'Process Payment',
+      'Send Alert Notification',
     ];
-    final descriptions = [
+    final descriptionTemplates = [
       'Process invoice data',
       'Send email to user',
       'Update user records',
@@ -40,16 +70,48 @@ class TaskRepository {
       'Validate form data',
       'Send webhook notification',
       'Archive old data',
+      'Optimize system performance',
+      'Fix reported software bug',
+      'Deploy latest version to production',
+      'Review and approve code changes',
+      'Update API and user documentation',
+      'Schedule system maintenance window',
+      'Monitor server health metrics',
+      'Analyze user behavior patterns',
+      'Create new REST API endpoint',
+      'Test payment gateway integration',
+      'Migrate legacy system code',
+      'Audit security access logs',
+      'Compress all media files',
+      'Update project dependencies',
+      'Generate monthly invoice PDF',
+      'Send user reminder email',
+      'Backup all user account data',
+      'Optimize slow database queries',
+      'Run all unit and integration tests',
+      'Deploy hotfix to production',
+      'Monitor API request usage',
+      'Schedule automated backup job',
+      'Update caching strategy',
+      'Process customer refund request',
+      'Validate email address format',
+      'Generate financial report PDF',
+      'Clean up temporary files',
+      'Update SSL/TLS certificate',
+      'Process payment transaction',
+      'Send critical system alert',
     ];
 
-    for (var i = 0; i < titles.length; i++) {
+    // Generate 40 tasks by cycling through templates
+    for (var i = 0; i < 40; i++) {
+      final templateIndex = i % titleTemplates.length;
       final id = 'task-${baseMicros + i}';
       final createdAt = DateTime.fromMicrosecondsSinceEpoch(baseMicros + i);
 
       final task = TaskModel(
         id: id,
-        title: 'Task ${i + 1}: ${titles[i]}',
-        description: descriptions[i],
+        title: 'Task ${i + 1}: ${titleTemplates[templateIndex]}',
+        description: descriptionTemplates[templateIndex],
         status: TaskStatus.pending,
         order: i,
         createdAt: createdAt,

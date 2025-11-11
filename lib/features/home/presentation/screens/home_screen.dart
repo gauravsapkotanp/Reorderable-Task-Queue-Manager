@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(color: Colors.grey[600]),
                             ),
                           )
-                        : ReorderableListView(
+                        : ReorderableListView.builder(
                             onReorder: (oldIndex, newIndex) {
                               // Adjust index for removal
                               if (oldIndex < newIndex) {
@@ -122,14 +122,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
                               context.read<TaskQueueBloc>().add(ReorderTasksEvent(reorderedTasks));
                             },
-                            children: [
-                              for (int i = 0; i < state.tasks.length; i++)
-                                TaskItemWidget(
-                                  key: ValueKey(state.tasks[i].id),
-                                  index: i,
-                                  task: state.tasks[i],
-                                ),
-                            ],
+                            itemCount: state.tasks.length,
+                            itemBuilder: (context, index) {
+                              return TaskItemWidget(
+                                key: ValueKey(state.tasks[index].id),
+                                index: index,
+                                task: state.tasks[index],
+                              );
+                            },
                           ),
                   ),
                   // Control Buttons
