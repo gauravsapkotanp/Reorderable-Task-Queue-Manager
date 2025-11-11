@@ -134,8 +134,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   // Control Buttons
                   Container(
-                    color: Colors.grey[100],
                     padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(60),
+                      ),
+                      color: const Color.fromARGB(255, 255, 255, 226),
+                      border: Border(
+                        top: BorderSide(
+                          color: Colors.grey[300]!,
+                        ),
+                      ),
+                    ),
                     child: Column(
                       children: [
                         Row(
