@@ -128,9 +128,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   key: ValueKey(state.tasks[i].id),
                                   index: i,
                                   task: state.tasks[i],
-                                  onTap: () {
-                                    // Task details can be opened here
-                                  },
                                 ),
                             ],
                           ),
@@ -258,7 +255,7 @@ class _StatItem extends StatelessWidget {
           value,
           style: TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w900,
             color: color,
           ),
         ),
