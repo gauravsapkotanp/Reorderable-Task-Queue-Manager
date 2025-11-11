@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:reorderable_list/features/home/data/model/task_model.dart';
 
@@ -13,7 +14,7 @@ class HiveSetup {
       // Open Boxes
       await _openHiveBoxes();
     } catch (e) {
-      print('Hive initialization error: $e');
+      debugPrint('Hive initialization error: $e');
       rethrow;
     }
   }
@@ -22,7 +23,7 @@ class HiveSetup {
     try {
       await Hive.openBox<TaskModel>('tasksBox');
     } catch (e) {
-      print('Error opening Hive boxes: $e');
+      debugPrint('Error opening Hive boxes: $e');
       rethrow;
     }
   }
