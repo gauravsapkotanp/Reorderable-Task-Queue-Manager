@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reorderable_list/features/home/bloc/task_queue_bloc.dart';
 import 'package:reorderable_list/features/home/bloc/task_queue_event.dart';
 import 'package:reorderable_list/features/home/bloc/task_queue_state.dart';
+import 'package:reorderable_list/features/home/presentation/widgets/start_item.dart';
 import 'package:reorderable_list/features/home/presentation/widgets/task_item_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -80,17 +81,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _StatItem(
+                        StatItem(
                           label: 'Total',
                           value: state.tasks.length.toString(),
                           color: Colors.blue,
                         ),
-                        _StatItem(
+                        StatItem(
                           label: 'Completed',
                           value: state.completedCount.toString(),
                           color: Colors.green,
                         ),
-                        _StatItem(
+                        StatItem(
                           label: 'Pending',
                           value: (state.tasks.length - state.completedCount).toString(),
                           color: Colors.orange,
@@ -242,41 +243,6 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
-    );
-  }
-}
-
-class _StatItem extends StatelessWidget {
-  final String label;
-  final String value;
-  final Color color;
-
-  const _StatItem({
-    required this.label,
-    required this.value,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          value,
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w900,
-            color: color,
-          ),
-        ),
-        Text(
-          label,
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 12,
-          ),
-        ),
-      ],
     );
   }
 }
