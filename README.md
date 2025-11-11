@@ -383,7 +383,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-**Garry** - [GitHub Profile](https://github.com/yourusername)
+**Garry** - [GitHub Profile](https://github.com/gauravsapkotanp)
 
 ## 🙏 Acknowledgments
 
@@ -394,7 +394,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-For support, email garry@example.com or open an issue in the GitHub repository.
+For support, email gaurav.sapkota0007@gmail.com or open an issue in the GitHub repository.
 
 ---
 
