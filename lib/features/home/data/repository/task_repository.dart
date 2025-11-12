@@ -15,7 +15,7 @@ class TaskRepository {
   }
 
   Future<void> _initializeMockTasks() async {
-    // Generate mock tasks with guaranteed-unique ids and slightly staggered createdA
+    // Generate mock tasks with guaranteed-unique ids and slightly staggered createdAt
     final baseMicros = DateTime.now().microsecondsSinceEpoch;
     final titleTemplates = [
       'Process Invoice',
